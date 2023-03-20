@@ -6,7 +6,7 @@ namespace Domain
     public class Activity
     {
         /// <summary>
-        /// This is the primary key that will be used in the database.
+        /// This is the primary key that will be used in the database (Must have property named "Id").
         /// </summary>
         public Guid Id { get; set; }
 
