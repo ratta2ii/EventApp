@@ -1,0 +1,34 @@
+using MediatR;
+using Persistence;
+using Domain;
+
+namespace Application.Activities
+{
+    public class Create
+    {
+        public class Command : IRequest
+        {
+            public Activity Activity { get; set; }
+        }
+
+        public class Handler : IRequestHandler<Command>
+        {
+            private readonly DataContext _context;
+            
+            public Handler(DataContext context)
+            {
+                _context = context;
+            }
+
+            public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
+            {
+                _context.Activities.Add(request.Activity);
+
+                await _context.SaveChangesAsync();
+
+                // This just let's API controller know we are finished processing method.
+                return Unit.Value; 
+            }
+        }
+    }
+}

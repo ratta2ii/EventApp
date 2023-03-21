@@ -10,7 +10,7 @@ namespace Persistence
         }
 
         /// <summary>
-        /// This represents the table tame in the database.
+        /// Activities represents the table name in the database.
         /// </summary>
         public DbSet<Activity> Activities { get; set; }
     }
