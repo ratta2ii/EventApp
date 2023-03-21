@@ -27,4 +27,9 @@
 ## NOTES
 
     - <React.StrictMode> causes double rendering in developement
-    - shift + ctrl + p (Developer Reload window)
+    - shift + ctrl + p (select Developer Reload Window)
+    - Clean Architecture (See clean architecture diagram by Uncle Bob)
+    - Mediator Pattern
+    - CQRS (Command Query Responsibility Segregation) Pattern
+        - Command modifies State, and Query does not modify State (i.e. reads)
+    - ORM (Object Relational Mapper (e.g. Entity Framework))
