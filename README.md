@@ -24,12 +24,15 @@
 
     - npx create-react-app appNameHere --use-npm --template typescript
 
-## NOTES
+## Notes
 
     - <React.StrictMode> causes double rendering in developement
     - shift + ctrl + p (select Developer Reload Window)
-    - Clean Architecture (See clean architecture diagram by Uncle Bob)
-    - Mediator Pattern
-    - CQRS (Command Query Responsibility Segregation) Pattern
+    - Clean Architecture Pattern (See clean architecture diagram by Uncle Bob)
+    - CQRS (Command Query Responsibility Segregation) + Mediator Pattern
         - Command modifies State, and Query does not modify State (i.e. reads)
     - ORM (Object Relational Mapper (e.g. Entity Framework))
+
+## Tools
+
+    - Json to TS (convert json objects to TS interfaces)
