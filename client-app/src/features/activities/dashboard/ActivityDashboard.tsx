@@ -15,6 +15,7 @@ interface IProps {
     closeForm: () => void;
     createOrEdit: (activity: IActivity) => void;
     deleteActivity: (id: string) => void;
+    submitting: boolean;
 }
 
 const ActivityDashboard = ({
@@ -27,12 +28,18 @@ const ActivityDashboard = ({
     closeForm,
     createOrEdit,
     deleteActivity,
+    submitting,
 }: IProps) => {
 
     return (
         <Grid>
             <Grid.Column width='10'>
-                <ActivityList activities={activities} selectActivity={selectActivity} deleteActivity={deleteActivity} />
+                <ActivityList
+                    activities={activities}
+                    selectActivity={selectActivity}
+                    deleteActivity={deleteActivity}
+                    submitting={submitting}
+                />
             </Grid.Column>
             <Grid.Column width='6'>
                 {selectedActivity && !editMode &&
@@ -42,8 +49,13 @@ const ActivityDashboard = ({
                         openForm={openForm}
                     />
                 }
-                {editMode && 
-                    <ActivityForm closeForm={closeForm} createOrEdit={createOrEdit} activity={selectedActivity} />
+                {editMode &&
+                    <ActivityForm
+                        closeForm={closeForm}
+                        createOrEdit={createOrEdit}
+                        activity={selectedActivity}
+                        submitting={submitting}
+                    />
                 }
             </Grid.Column>
         </Grid>
