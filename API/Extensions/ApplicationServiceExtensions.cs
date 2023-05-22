@@ -3,6 +3,8 @@ using MediatR;
 using Application.Activities;
 using Persistence;
 using Application.Core;
+using FluentValidation.AspNetCore;
+using FluentValidation;
 
 namespace API.Extensions
 {
@@ -29,6 +31,9 @@ namespace API.Extensions
 
             // Registers all mapping profiles (i.e., merging objects during edit). 
             services.AddAutoMapper(typeof(MappingProfiles).Assembly);
+
+            services.AddFluentValidationAutoValidation();
+            services.AddValidatorsFromAssemblyContaining<Create>();
 
             return services;
         }
